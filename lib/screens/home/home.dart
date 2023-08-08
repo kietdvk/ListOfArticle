@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_listof/screens/home/card_article.dart';
 import 'package:flutter_listof/screens/home/timeline_card.dart';
 
 class Homepage extends StatelessWidget {
@@ -18,7 +19,7 @@ class Homepage extends StatelessWidget {
           padding: const EdgeInsets.only(left: 20),
           child: Center(
             child: RichText(
-              text: TextSpan(
+              text: const TextSpan(
                 children: [
                   TextSpan(
                       text: "Hello ",
@@ -50,23 +51,15 @@ class Homepage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: [
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      CardArticle(),
-                      CardArticle(),
-                      CardArticle(),
-                      CardArticle(),
-                      CardArticle(),
-                    ],
-                  ),
-                ),
-              ],
+          Container(
+            margin: const EdgeInsets.all(20),
+            height: 100,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: 10,
+              itemBuilder: (BuildContext context, int index) {
+                return const CardArticle();
+              },
             ),
           ),
           Container(
@@ -75,11 +68,11 @@ class Homepage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "List Of Article",
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TimelineCard extends StatelessWidget {
-  TimelineCard({
+  const TimelineCard({
     super.key,
   });
 
@@ -11,7 +11,7 @@ class TimelineCard extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 20),
       child: Row(
         children: [
-          Expanded(
+          const Expanded(
             flex: 3,
             child: Text(
               "08:00 AM",
@@ -24,7 +24,7 @@ class TimelineCard extends StatelessWidget {
               width: double.infinity,
               height: 50,
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                     begin: Alignment.centerRight,
                     end: Alignment.centerLeft,
                     colors: [Colors.white, Colors.blue]),
@@ -33,29 +33,6 @@ class TimelineCard extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class CardArticle extends StatelessWidget {
-  const CardArticle({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsetsDirectional.only(end: 5),
-      width: 90,
-      height: 90,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4),
-        gradient: LinearGradient(
-          begin: Alignment.centerRight,
-          end: Alignment.centerLeft,
-          colors: [Colors.white, Colors.blue],
-        ),
       ),
     );
   }
